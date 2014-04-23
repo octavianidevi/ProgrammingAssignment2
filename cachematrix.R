@@ -44,8 +44,7 @@ cacheSolve <- function(x, ...) {
         # and give the inversed matrix value as the return
         
         data <- x$get()
-        m <- 1/(data[1]*data[4] - data[2]*data[3]) * 
-                matrix(c(data[4],-data[2],-data[3],data[1]),2)
+        m <- solve(data)
         
         x$setInverse(m) #set the inverse matrix
         m               #return inversed matrix
